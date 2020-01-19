@@ -30,6 +30,10 @@ interface ISing {
 	void sing();
 }
 
+interface ISwim {
+	void swim();
+}
+
 @SpringBootApplication
 public class QuizApplication {
 
