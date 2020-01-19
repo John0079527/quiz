@@ -72,10 +72,29 @@ class Chicken extends Bird {
 }
 
 class Rooster extends Bird {
+	
+	String country;
+	String language;
+	
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 
 	@Override
 	public void sing() {
-		System.out.println("Cock-a-doodle-doo");
+		System.out.println(language);
 	}
 }
 
@@ -263,6 +282,17 @@ public class QuizApplication {
 		System.out.println("how many of these animals can walk? " + countWalk);
 		System.out.println("how many of these animals can sing? " + countSing);
 		System.out.println("how many of these animals can swim? " + countSwim);
+		
+		Rooster rooster1 = new Rooster();
+		rooster1.setCountry("German");
+		rooster1.setLanguage("kikeriki");
+		
+		Rooster rooster2 = new Rooster();
+		rooster2.setCountry("French");
+		rooster2.setLanguage("cocorico");
+		
+		rooster1.sing();
+		rooster2.sing();
 	}
 
 }
