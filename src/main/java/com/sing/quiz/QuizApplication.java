@@ -72,11 +72,47 @@ class Chicken extends Bird {
 }
 
 class Rooster extends Bird {
-	
+
 	@Override
 	public void sing() {
 		System.out.println("Cock-a-doodle-doo");
 	}
+}
+
+class Parrot extends Bird implements IFly {
+	
+	String livingWith;
+	String sing;
+
+	public String getLivingWith() {
+		return livingWith;
+	}
+
+
+	public void setLivingWith(String livingWith) {
+		this.livingWith = livingWith;
+	}
+
+
+	public String getSing() {
+		return sing;
+	}
+
+
+	public void setSing(String sing) {
+		this.sing = sing;
+	}
+
+	@Override
+	public void fly() {
+		System.out.println("I am flying");
+	}
+	
+	@Override
+	public void sing() {
+		System.out.println(sing);
+	}
+	
 }
 
 @SpringBootApplication
@@ -84,10 +120,18 @@ public class QuizApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(QuizApplication.class, args);
-/*		Bird bird = new Bird();
-		bird.walk();
-		bird.fly();
-		bird.sing();*/
+		Parrot parrot1 = new Parrot();
+		parrot1.setLivingWith("dog");
+		parrot1.setSing("Woof, Woof");
+		Parrot parrot2 = new Parrot();
+		parrot2.setLivingWith("cat");
+		parrot2.setSing("Meow");
+		Parrot parrot3 = new Parrot();
+		parrot3.setLivingWith("rooster");
+		parrot3.setSing("Cock-a-doodle-doo");		
+		parrot1.sing();
+		parrot2.sing();
+		parrot3.sing();
 	}
 
 }
