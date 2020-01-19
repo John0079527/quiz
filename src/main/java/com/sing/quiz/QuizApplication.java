@@ -15,13 +15,8 @@ abstract class Animal {
 	}
 }
 
-class Bird extends Animal {
-	void fly() {
-		System.out.println("I am flying");
-	}
-	void sing() {
-		System.out.println("I am Singing");
-	}
+interface ISwim {
+	void swim();
 }
 
 interface IWalk {
@@ -41,10 +36,10 @@ public class QuizApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(QuizApplication.class, args);
-		Bird bird = new Bird();
+/*		Bird bird = new Bird();
 		//bird.walk();
 		bird.fly();
-		bird.sing();
+		bird.sing();*/
 	}
 
 }
