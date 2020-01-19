@@ -3,6 +3,7 @@ package com.sing.quiz;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 abstract class Animal {
 	String name = "Animal";
 
@@ -31,7 +32,7 @@ interface ISwim {
 	void swim();
 }
 
-class Bird extends Animal implements IWalk, ISing {
+abstract class Bird extends Animal implements IWalk, ISing {
 
 	@Override
 	public void sing() {
@@ -116,6 +117,33 @@ class Parrot extends Bird implements IFly {
 
 abstract class Aquatic extends Animal implements ISwim {
 	
+}
+
+class Fish extends Aquatic {
+	String color;
+	int size;
+
+	public String getColor() {
+		return color;
+	}
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+	
+	@Override
+	public void swim() {
+		System.out.println("Fish can swim");
+	}
 }
 
 @SpringBootApplication
