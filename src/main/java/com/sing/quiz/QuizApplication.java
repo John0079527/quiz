@@ -168,6 +168,14 @@ class Dolphin extends Aquatic {
 	}
 }
 
+class Butterfly extends Animal implements IFly {
+	
+	@Override
+	public void fly() {
+		System.out.println("I am Butterfly and I'm flying");
+	}
+}
+
 @SpringBootApplication
 public class QuizApplication {
 
@@ -199,6 +207,12 @@ public class QuizApplication {
 		clownfish.setSize(1);
 		System.out.println(clownfish.getName()+" "+clownfish.getColor()+" "+clownfish.getSize());
 		((Clownfish) clownfish).joke();
+		
+		Aquatic dolphin = new Dolphin();
+		dolphin.swim();
+		
+		Butterfly butterfly = new Butterfly();
+		butterfly.fly();
 	}
 
 }
