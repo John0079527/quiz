@@ -3,7 +3,6 @@ package com.sing.quiz;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 abstract class Animal {
 	String name = "Animal";
 
@@ -229,6 +228,41 @@ public class QuizApplication {
 		Insect caterpillar = new Caterpillar();
 		((Caterpillar) caterpillar).walk();
 		
+		// count
+		Animal[] animals = new Animal[] {
+				new Duck(),
+				new Chicken(),
+				new Rooster(),
+				new Parrot(),
+				new Fish(),
+				new Shark(),
+				new Clownfish(),
+				new Dolphin(),
+				new Butterfly(),
+				new Caterpillar()
+		};
+		int countFly = 0;
+		int countWalk = 0;
+		int countSing = 0;
+		int countSwim = 0;
+		for(Animal animal: animals) {
+			if(animal instanceof IFly) {
+				countFly++;
+			}
+			if(animal instanceof IWalk) {
+				countWalk++;
+			}
+			if(animal instanceof ISing) {
+				countSing++;
+			}
+			if(animal instanceof ISwim) {
+				countSwim++;
+			}
+		}
+		System.out.println("how many of these animals can fly? " + countFly);
+		System.out.println("how many of these animals can walk? " + countWalk);
+		System.out.println("how many of these animals can sing? " + countSing);
+		System.out.println("how many of these animals can swim? " + countSwim);
 	}
 
 }
