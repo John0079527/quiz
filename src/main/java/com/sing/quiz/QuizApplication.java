@@ -146,6 +146,20 @@ class Fish extends Aquatic {
 	}
 }
 
+class Shark extends Fish {
+	
+	public void eat() {
+		System.out.println("I'm Shark and I eat other fish");
+	}
+}
+
+class Clownfish extends Fish {
+	
+	public void joke() {
+		System.out.println("I'm Clownfish and I make jokes");
+	}
+}
+
 @SpringBootApplication
 public class QuizApplication {
 
@@ -163,6 +177,20 @@ public class QuizApplication {
 		parrot1.sing();
 		parrot2.sing();
 		parrot3.sing();
+		
+		Fish shark = new Shark();
+		shark.setName("shark");
+		shark.setColor("grey");
+		shark.setSize(100);
+		System.out.println(shark.getName()+" "+shark.getColor()+" "+shark.getSize());
+		((Shark) shark).eat();
+		
+		Fish clownfish = new Clownfish();
+		clownfish.setName("clownfish");
+		clownfish.setColor("orange");
+		clownfish.setSize(1);
+		System.out.println(clownfish.getName()+" "+clownfish.getColor()+" "+clownfish.getSize());
+		((Clownfish) clownfish).joke();
 	}
 
 }
