@@ -168,11 +168,23 @@ class Dolphin extends Aquatic {
 	}
 }
 
-class Butterfly extends Animal implements IFly {
+abstract class Insect extends Animal {
+	
+}
+
+class Butterfly extends Insect implements IFly {
 	
 	@Override
 	public void fly() {
 		System.out.println("I am Butterfly and I'm flying");
+	}
+}
+
+class Caterpillar extends Insect implements IWalk {
+
+	@Override
+	public void walk() {
+		System.out.println("I am Caterpillar and I can walk");
 	}
 }
 
@@ -211,8 +223,12 @@ public class QuizApplication {
 		Aquatic dolphin = new Dolphin();
 		dolphin.swim();
 		
-		Butterfly butterfly = new Butterfly();
-		butterfly.fly();
+		Insect butterfly = new Butterfly();
+		((Butterfly) butterfly).fly();
+		
+		Insect caterpillar = new Caterpillar();
+		((Caterpillar) caterpillar).walk();
+		
 	}
 
 }
