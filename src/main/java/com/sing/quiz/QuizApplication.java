@@ -112,6 +112,9 @@ class Parrot extends Bird implements IFly {
 	public void sing() {
 		System.out.println(sing);
 	}
+}
+
+abstract class Aquatic extends Animal implements ISwim {
 	
 }
 
