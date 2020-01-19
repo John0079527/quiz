@@ -160,6 +160,14 @@ class Clownfish extends Fish {
 	}
 }
 
+class Dolphin extends Aquatic {
+	
+	@Override
+	public void swim() {
+		System.out.println("I'm Dolphine and I can swim very fast");
+	}
+}
+
 @SpringBootApplication
 public class QuizApplication {
 
