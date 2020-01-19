@@ -18,6 +18,18 @@ class Bird extends Animal {
 	}
 }
 
+interface IWalk {
+	void walk();
+}
+
+interface IFly {
+	void fly();
+}
+
+interface ISing {
+	void sing();
+}
+
 @SpringBootApplication
 public class QuizApplication {
 
