@@ -63,6 +63,14 @@ class Duck extends Bird implements ISwim, IFly {
 	}
 }
 
+class Chicken extends Bird {
+	
+	@Override
+	public void sing() {
+		System.out.println("Cluck, cluck");
+	}
+}
+
 @SpringBootApplication
 public class QuizApplication {
 
