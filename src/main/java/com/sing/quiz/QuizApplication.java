@@ -15,15 +15,6 @@ abstract class Animal {
 	}
 }
 
-class Bird extends Animal {
-	void fly() {
-		System.out.println("I am flying");
-	}
-	void sing() {
-		System.out.println("I am Singing");
-	}
-}
-
 interface IWalk {
 	void walk();
 }
@@ -38,6 +29,20 @@ interface ISing {
 
 interface ISwim {
 	void swim();
+}
+
+class Bird extends Animal implements IWalk, ISing {
+
+	@Override
+	public void sing() {
+		System.out.println("I am singing");
+	}
+
+	@Override
+	public void walk() {
+		System.out.println("I am walking");
+	}
+	
 }
 
 @SpringBootApplication
